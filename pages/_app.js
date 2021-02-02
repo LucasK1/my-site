@@ -7,6 +7,7 @@ body {
   margin: 0;
   font-family: sans-serif;
   background-color: #F6F6F6;
+  overflow-x: hidden;
 }
 
 :focus { 
@@ -24,13 +25,13 @@ a {
 
 `;
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <GlobalStyle />
       <Component {...pageProps} />
     </>
   );
-}
+};
 
 export default MyApp;

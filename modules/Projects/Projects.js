@@ -20,6 +20,13 @@ const Projects = () => {
         'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque ullam at ea reprehenderit, nam quam provident enim saepe dicta animi nemo iste maiores praesentium eum. Qui laboriosam itaque eos voluptates.',
       thumbnail: '',
     },
+    {
+      id: 3,
+      name: 'Bestreads',
+      desc:
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque ullam at ea reprehenderit, nam quam provident enim saepe dicta animi nemo iste maiores praesentium eum. Qui laboriosam itaque eos voluptates.',
+      thumbnail: '',
+    },
   ];
 
   return (
