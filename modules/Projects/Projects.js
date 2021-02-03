@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Project from './Project';
+import { SecondaryTitle } from '../../pages';
 
-const Section = styled.section``;
+const Section = styled.section`
+text-align: center;
+`;
 
 const Projects = () => {
   const projects = [
@@ -37,6 +40,7 @@ const Projects = () => {
 
   return (
     <Section>
+      <SecondaryTitle>My Projects</SecondaryTitle>
       {projects.map((project) => (
         <Project project={project} key={project.id} />
       ))}

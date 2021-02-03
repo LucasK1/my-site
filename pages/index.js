@@ -77,7 +77,7 @@ const Stack = styled.section`
   width: 100%;
   text-align: center;
 `;
-const Stacktitle = styled.h2`
+export const SecondaryTitle = styled.h2`
   font-size: 2.5rem;
 `;
 const StackList = styled.ul`
@@ -153,7 +153,7 @@ const Home = () => {
       </Landing>
       <Stack>
         <Container>
-          <Stacktitle>My stack</Stacktitle>
+          <SecondaryTitle>My stack</SecondaryTitle>
           <StackList>
             {stackElems.map((el) => (
               <StackElement>

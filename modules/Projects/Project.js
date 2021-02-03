@@ -22,6 +22,7 @@ const GithubLink = styled.a`
 `;
 
 const Wrapper = styled.div`
+  text-align: left;
   width: 900px;
   height: 400px;
   margin-bottom: 150px;
