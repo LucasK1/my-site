@@ -68,7 +68,8 @@ const Subtitle = styled.span`
   margin-left: 450px;
 `;
 const Main = styled.main`
-  height: 90vh;
+  padding: 50px;
+  height: 100%;
 `;
 const Stack = styled.section`
   height: 400px;
@@ -131,6 +132,6 @@ const Home = () => {
       `}</style>
     </>
   );
-}
+};
 
 export default Home;
