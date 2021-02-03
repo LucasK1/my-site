@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Spacer, { InlineSpacer } from '../modules/common/Spacer';
 import Projects from '../modules/Projects/Projects';
@@ -80,14 +80,60 @@ const Stack = styled.section`
 const Stacktitle = styled.h2`
   font-size: 2.5rem;
 `;
-const StackList = styled.div`
+const StackList = styled.ul`
   width: 100%;
   padding-top: 40px;
   display: flex;
   justify-content: space-around;
+  list-style: none;
+`;
+const StackName = styled.p`
+  padding-top: 10px;
+  visibility: hidden;
+`;
+const StackElement = styled.li`
+  & > i {
+    transform: scale(4);
+    &:hover {
+      color: grey;
+    }
+    &:hover ~ ${StackName} {
+      visibility: visible;
+    }
+  }
 `;
 
 const Home = () => {
+  const stackElems = [
+    {
+      name: 'HTML5',
+      logo: <i className="fab fa-html5"></i>,
+    },
+    {
+      name: 'CSS3',
+      logo: <i className="fab fa-css3-alt"></i>,
+    },
+    {
+      name: 'JavaScript',
+      logo: <i className="fab fa-js"></i>,
+    },
+    {
+      name: 'React',
+      logo: <i className="fab fa-react"></i>,
+    },
+    {
+      name: 'SASS',
+      logo: <i className="fab fa-sass"></i>,
+    },
+    {
+      name: 'GitHub',
+      logo: <i className="fab fa-github"></i>,
+    },
+    {
+      name: 'Linux',
+      logo: <i className="fab fa-linux"></i>,
+    },
+  ];
   return (
     <>
       <Head>
@@ -109,13 +155,11 @@ const Home = () => {
         <Container>
           <Stacktitle>My stack</Stacktitle>
           <StackList>
-            <i className="fab fa-html5"></i>
-            <i className="fab fa-css3-alt"></i>
-            <i className="fab fa-js"></i>
-            <i className="fab fa-react"></i>
-            <i className="fab fa-sass"></i>
-            <i className="fab fa-github"></i>
-            <i className="fab fa-linux"></i>
+            {stackElems.map((el) => (
+              <StackElement>
+                {el.logo} <StackName>{el.name}</StackName>
+              </StackElement>
+            ))}
           </StackList>
         </Container>
       </Stack>
@@ -124,12 +168,6 @@ const Home = () => {
           <Projects />
         </Container>
       </Main>
-      <style jsx>{`
-        .fab {
-          display: block;
-          transform: scale(4);
-        }
-      `}</style>
     </>
   );
 };

@@ -9,7 +9,17 @@ const Description = styled.aside`
   max-width: 50%;
 `;
 const Name = styled.h2``;
-const Text = styled.p``;
+const Text = styled.p`
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+`;
+const GithubLink = styled.a`
+  text-decoration: underline;
+  color: blue;
+  &:hover {
+    color: blueviolet;
+  }
+`;
 
 const Wrapper = styled.div`
   width: 900px;
@@ -30,13 +40,20 @@ const Wrapper = styled.div`
   }
 `;
 
-const Project = ({ project: { id, name, desc, thumbnail } }) => {
+const Project = ({
+  project: { id, name, desc, thumbnail, netlify, github },
+}) => {
   return (
     <Wrapper id={id}>
-      <Image src={thumbnail} />
+      <a href={netlify} target="_blank">
+        <Image src={thumbnail} />
+      </a>
       <Description>
         <Name>{name}</Name>
         <Text>{desc}</Text>
+        <GithubLink href={github} target="_blank">
+          Github repo
+        </GithubLink>
       </Description>
     </Wrapper>
   );
