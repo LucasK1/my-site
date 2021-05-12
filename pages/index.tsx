@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Spacer, { InlineSpacer } from '../modules/common/Spacer';
 import Projects from '../modules/Projects/Projects';

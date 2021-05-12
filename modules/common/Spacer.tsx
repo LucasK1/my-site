@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const getHeight = ({ axis, size }) => {
+const getHeight = ({ axis, size }: { axis: string; size: number }): number => {
   return axis === 'horizontal' ? 1 : size;
 };
 
-const getWidth = ({ axis, size }) => {
+const getWidth = ({ axis, size }: { axis: string; size: number }): number => {
   return axis === 'vertical' ? 1 : size;
 };
 

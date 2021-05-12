@@ -1,6 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export interface ProjectType {
+  id: number;
+  name: string;
+  desc: string;
+  github: string;
+  netlify: string;
+  thumbnail: string;
+}
+
+interface ProjectProps {
+  project: ProjectType;
+}
+
 const Image = styled.img`
   height: 200px;
   transition: all 200ms ease-in;
@@ -21,19 +34,23 @@ const GithubLink = styled.a`
   }
 `;
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  _id: number;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   text-align: left;
   width: 900px;
   height: 400px;
   margin-bottom: 150px;
-  margin-left: ${(props) => (props.id % 2 === 0 ? '200px' : '')};
+  margin-left: ${(props) => (props._id % 2 === 0 ? '200px' : '')};
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #dadada;
   box-shadow: 1px 1px 20px #dadada;
   transform: ${(props) =>
-    props.id % 2 === 0 ? 'rotate(2deg)' : 'rotate(-2deg)'};
+    props._id % 2 === 0 ? 'rotate(2deg)' : 'rotate(-2deg)'};
   transition: transform 200ms ease-in;
   &:hover {
     transform: rotate(2deg);
@@ -43,9 +60,9 @@ const Wrapper = styled.div`
 
 const Project = ({
   project: { id, name, desc, thumbnail, netlify, github },
-}) => {
+}: ProjectProps) => {
   return (
-    <Wrapper id={id}>
+    <Wrapper _id={id}>
       <a href={netlify} target="_blank">
         <Image src={thumbnail} />
       </a>
